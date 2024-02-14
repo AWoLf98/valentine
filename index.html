@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>Valentine</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -29,9 +30,9 @@
             <div class="shadow"></div>
         <div class="container-question">
                 <img class="image" src="./images/cute.gif" alt="gifs">        
-                <div class="text2">
+                <!-- <div class="text2"> -->
                   <h1 class="hh" id="name">Привіт, красуне!</h1>
-                </div>
+                <!-- </div> -->
                 <div class="buttons">
                     <button class="button no" id="no-button" onclick="showMessage('No')">Ні</button>
                     <button class="button yes"  style="width: 100px; height: 50px;" onclick="showMessage('Yes')" id="yesButton">Так</button>
@@ -64,7 +65,8 @@
                 const randomY = Math.max(0, Math.floor(Math.random() * maxHeight));
 
                 yesButton.style.width = `${parseInt(yesButton.style.width.slice(0,-2)) + 40}px`;
-                yesButton.style.height = `${parseInt(yesButton.style.height.slice(0,-2)) + 20}px`;              
+                yesButton.style.height = `${parseInt(yesButton.style.height.slice(0,-2)) + 20}px`;
+                
 
                 noButton.style.left = randomX + "px";
                 noButton.style.top = randomY + "px";
