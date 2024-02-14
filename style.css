@@ -1,6 +1,5 @@
 body {
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -279,7 +278,6 @@ body .container-question {
 .buttons button {
   background-color: #ff4d79;
   color: #fff;
-  /* width: 100px; */
   padding: 10px 30px;
   border: none;
   border-radius: 10px;
