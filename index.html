@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Valentine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <input type="checkbox" name="trigger" hidden id="trigger">
+    <label for="trigger" class="container">
+        <div class="valentines">
+            <div class="envelope"></div>
+            <div class="front"></div>
+            <div class="card">
+                <div class="text">Ти</br> будеш моєю</br>Валентинкою?</div>
+                <div class="heart"></div>
+                <div class="hearts">
+                    <div class="one"></div>
+                    <div class="two"></div>
+                    <div class="three"></div>
+                    <div class="four"></div>
+                    <div class="five"></div>
+                </div>
+            </div>
+        </div>
+            <div class="shadow"></div>
+        <div class="container-question">
+                <img class="image" src="./images/cute.gif"></img>         
+                <div class="text2">
+                  <h1 class="hh" id="name">Привіт, красуне!</h1>
+                </div>
+                <div class="buttons">
+                    <button class="button no" id="no-button" onclick="showMessage('No')">Ні</button>
+                    <button class="button yes"  style="width: 100px; height: 50px;" onclick="showMessage('Yes')" id="yesButton">Так</button>
+                </div>
+        </div>
+    </label>
+    <script>
+
+        const button = document.getElementById('no-button');
+  
+        // Add event listener for mouseenter event
+        button.addEventListener('mouseenter', function() {
+            showMessage('No')
+        });
+  
+        function showMessage(response) {
+            if (response === "No") {
+                const yesButton = document.getElementById("yesButton");
+                console.log(yesButton);
+                const noButton = document.getElementById("no-button");
+                const container = document.querySelector(".container");
+                const maxWidth = window.innerWidth - noButton.offsetWidth;
+                const maxHeight = window.innerHeight - noButton.offsetHeight;
+            
+                noButton.style.position = "absolute";
+            
+                document.getElementsByClassName("image")[0].src = "images/gun.gif";
+            
+                const randomX = Math.max(0, Math.floor(Math.random() * maxWidth));
+                const randomY = Math.max(0, Math.floor(Math.random() * maxHeight));
+
+                console.log("До " + yesButton.style.width);
+                yesButton.style.width = `${parseInt(yesButton.style.width.slice(0,-2)) + 20}px`;
+                yesButton.style.height = `${parseInt(yesButton.style.height.slice(0,-2)) + 10}px`;
+                console.log("Після " + yesButton.style.width);
+                
+
+                noButton.style.left = randomX + "px";
+                noButton.style.top = randomY + "px";
+            
+                document.getElementById("name").textContent =
+                    "Альо, ти що там задумала?";
+                //   document.getElementById("name").style.display = "none";
+    
+            }
+  
+            if (response === "Yes") {
+                document.getElementById("no-button").remove();
+            
+                const yesMessage = document.getElementById("name");
+                yesMessage.textContent = "Ти моя бусінка 😘";
+                yesMessage.style.display = "block";
+                yesMessage.style.fontStyle = "normal";
+                document.getElementsByClassName("image")[0].src = "images/kiss.gif";
+            
+                document.getElementById("yesButton").remove();
+            }
+  }
+      </script>
+</body>
+</html>
